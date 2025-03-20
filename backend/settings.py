@@ -32,7 +32,7 @@ DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost 127.0.0.1').split()
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://your-app.up.railway.app",
+    "https://treeversebackend-production.up.railway.app",
     "http://localhost:3000",  # For local frontend
 ]
 
@@ -65,7 +65,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "https://your-app.up.railway.app",
+    "https://treeversebackend-production.up.railway.app",
     "http://localhost:3000",  # Adjust as needed
 ]
 
