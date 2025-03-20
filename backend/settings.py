@@ -31,7 +31,8 @@ DEBUG=True
 
 
 # ALLOWED_HOSTS = ['https://treeversebackend-production.up.railway.app', "http://localhost:3000"]
-ALLOWED_HOSTS = ['http://127.0.0.1:8000','https://treeversebackend-production.up.railway.app',"http://localhost:3000", 'treeversebackend-production.up.railway.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'treeversebackend-production.up.railway.app']
+
 
 CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000','https://treeversebackend-production.up.railway.app',"http://localhost:3000"]
 # CSRF_TRUSTED_ORIGINS = [
