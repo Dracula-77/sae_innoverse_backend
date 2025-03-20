@@ -20,12 +20,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-l_boql@*b@r3&em*$!ej2=x3h#re=m#@7-!8%1=-3u8-2_j9(_'
+# SECRET_KEY = 'django-insecure-l_boql@*b@r3&em*$!ej2=x3h#re=m#@7-!8%1=-3u8-2_j9(_'
+import os
+
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-default-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ["*"]
+
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost 127.0.0.1').split()
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://your-app.up.railway.app",
+    "http://localhost:3000",  # For local frontend
+]
 
 
 # Application definition
@@ -55,7 +64,10 @@ MIDDLEWARE = [
 
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://your-app.up.railway.app",
+    "http://localhost:3000",  # Adjust as needed
+]
 
 ROOT_URLCONF = 'backend.urls'
 
@@ -123,7 +135,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
