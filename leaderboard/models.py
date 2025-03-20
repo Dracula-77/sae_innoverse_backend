@@ -6,3 +6,19 @@ class Leaderboard(models.Model):
 
     def __str__(self):
         return f"{self.name} - {self.time}s"
+
+class Player(models.Model):
+    name = models.CharField(max_length=100)
+    is_complete = models.BooleanField(default=False)
+    # score = models.IntegerField(default=0)
+    # start_time = models.BigIntegerField(default=0)
+
+    def __str__(self):
+        return f"{self.name} -  {'Complete' if self.is_complete else 'Incomplete'}"
+    
+
+class Winner(models.Model):
+    name = models.CharField(max_length=100)
+    def __str__(self):
+        return f"{self.name}"
+
