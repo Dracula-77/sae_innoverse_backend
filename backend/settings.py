@@ -20,16 +20,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-l_boql@*b@r3&em*$!ej2=x3h#re=m#@7-!8%1=-3u8-2_j9(_'
+SECRET_KEY = 'django-insecure-l_boql@*b@r3&em*$!ej2=x3h#re=m#@7-!8%1=-3u8-2_j9(_'
 import os
 
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-default-secret-key')
+# SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-default-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost 127.0.0.1').split()
+ALLOWED_HOSTS = ['https://treeversebackend-production.up.railway.app']
 
 CSRF_TRUSTED_ORIGINS = [
     "https://treeversebackend-production.up.railway.app",
