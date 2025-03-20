@@ -5,6 +5,7 @@ from .models import Leaderboard , Player, Winner
 from .serializers import LeaderboardSerializer, PlayerSerializer, WinnerSerializer
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import get_object_or_404
+from rest_framework import status
 # from rest_framework.views import APIView
 
 # code to add player to leaderboard
@@ -17,12 +18,11 @@ def leaderboard_list(request):
         return Response(serializer.data)
 
     elif request.method == 'POST':
-        
-            serializer = LeaderboardSerializer(data=request.data)
-            if serializer.is_valid():
-                serializer.save()
-                return Response(serializer.data, status=status.HTTP_201_CREATED)
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        serializer = LeaderboardSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 # code to add player in the model    
 @csrf_exempt
@@ -34,13 +34,12 @@ def player_list(request):
         return Response(serializer.data)
 
     elif request.method == 'POST':
-        
-            serializer = PlayerSerializer(data=request.data)
-            if serializer.is_valid():
-                serializer.save()
-                return Response(serializer.data, status=status.HTTP_201_CREATED)
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
+        serializer = PlayerSerializer(data=request.data) 
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 
 # code to delete or update the data of the model    
