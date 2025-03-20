@@ -18,6 +18,7 @@ class Player(models.Model):
 
 class Winner(models.Model):
     name = models.CharField(max_length=100)
+    time = models.FloatField() 
     def __str__(self):
         return f"{self.name}"
 
