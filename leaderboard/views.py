@@ -45,7 +45,7 @@ def player_list(request):
 
 # code to delete or update the data of the model    
 @csrf_exempt
-@api_view(['PATCH', 'DELETE'])
+@api_view(['PATCH', 'DELETE', 'PUT'])
 def player_detail(request, player_id):
     """Update or delete a specific player."""
     player = get_object_or_404(Player, id=player_id)
