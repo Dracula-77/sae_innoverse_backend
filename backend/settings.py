@@ -26,15 +26,18 @@ import os
 # SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-default-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+# DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+DEBUG=True
 
 
-ALLOWED_HOSTS = ['https://treeversebackend-production.up.railway.app']
+# ALLOWED_HOSTS = ['https://treeversebackend-production.up.railway.app', "http://localhost:3000"]
+ALLOWED_HOSTS = ['http://127.0.0.1:8000','https://treeversebackend-production.up.railway.app',"http://localhost:3000"]
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://treeversebackend-production.up.railway.app",
-    "http://localhost:3000",  # For local frontend
-]
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000','https://treeversebackend-production.up.railway.app',"http://localhost:3000"]
+# CSRF_TRUSTED_ORIGINS = [
+#     "https://treeversebackend-production.up.railway.app",
+#     "http://localhost:3000",  # For local frontend
+# ]
 
 
 # Application definition
@@ -64,10 +67,11 @@ MIDDLEWARE = [
 
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "https://treeversebackend-production.up.railway.app",
-    "http://localhost:3000",  # Adjust as needed
-]
+CORS_ALLOWED_ORIGINS = [ 'http://127.0.0.1:8000','https://treeversebackend-production.up.railway.app',"http://localhost:3000"]
+# CORS_ALLOWED_ORIGINS = [
+#     "https://treeversebackend-production.up.railway.app",
+#     "http://localhost:3000",  # Adjust as needed
+# ]
 
 ROOT_URLCONF = 'backend.urls'
 
