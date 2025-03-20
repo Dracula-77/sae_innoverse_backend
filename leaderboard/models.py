@@ -10,7 +10,6 @@ class Leaderboard(models.Model):
 class Player(models.Model):
     name = models.CharField(max_length=100)
     is_complete = models.BooleanField(default=False)
-<<<<<<< HEAD
     # score = models.IntegerField(default=0)
     # start_time = models.BigIntegerField(default=0)
 
@@ -23,8 +22,3 @@ class Winner(models.Model):
     def __str__(self):
         return f"{self.name}"
 
-=======
-
-    def __str__(self):
-        return f"{self.name} -  {'Complete' if self.is_complete else 'Incomplete'}"
->>>>>>> b4c5730e8052513033a436a361ad9e1c103f2052

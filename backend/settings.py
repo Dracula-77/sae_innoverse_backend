@@ -73,7 +73,6 @@ CORS_ALLOWED_ORIGINS = [ 'http://127.0.0.1:8000','https://treeversebackend-produ
 #     "https://treeversebackend-production.up.railway.app",
 #     "http://localhost:3000",  # Adjust as needed
 # ]
-# CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'backend.urls'
 
