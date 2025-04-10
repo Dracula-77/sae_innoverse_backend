@@ -31,7 +31,7 @@ DEBUG=True
 
 
 # ALLOWED_HOSTS = ['https://treeversebackend-production.up.railway.app', "http://localhost:3000"]
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'treeversebackend-production.up.railway.app', 'innoverse-25.vercel.app', 'treeverse.arhn.in', 'innoverse.arhn.in', 'https://web-production-9d1b5.up.railway.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'treeversebackend-production.up.railway.app', 'innoverse-25.vercel.app', 'treeverse.arhn.in', 'innoverse.arhn.in', 'web-production-9d1b5.up.railway.app']
 
 
 CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000','https://treeversebackend-production.up.railway.app',"http://localhost:3000", "https://treeverse.arhn.in", "https://treeverse.arhn.in", 'https://innoverse.arhn.in', 'https://web-production-9d1b5.up.railway.app']
