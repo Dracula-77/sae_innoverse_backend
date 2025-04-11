@@ -27,7 +27,7 @@ const Intro = () => {
         // Save email and name to localStorage
         localStorage.setItem("name", userInfo.name);
         const player_name= userInfo.name;
-        const checkResponse = await fetch(`${backend_url}/api/player/`);
+        const checkResponse = await fetch("https://treeversebackend-production.up.railway.app/api/player/");
         if (!checkResponse.ok) throw new Error("Error fetching player data");
   
         const players = await checkResponse.json();
@@ -37,7 +37,11 @@ const Intro = () => {
         if (!playerExists) {
           // https://treeversebackend-production.up.railway.app
           // If the player does not exist, add them
+<<<<<<< HEAD:backend/leaderboard/__pycache__/src/Components/Intro/Intro.jsx
           const addPlayerResponse = await fetch("https://treeversebackend-production.up.railway.app/api/player/", {
+=======
+          await fetch("https://treeversebackend-production.up.railway.app/api/player/", {
+>>>>>>> 00d28956342fc85b493d71bdf9400b405bf3e62c:src/Components/Intro/Intro.jsx
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

@@ -34,7 +34,7 @@ function GameScreen({ onRiddleCollected, onElimination, riddlesCollected, setIsD
 
   // Shuffle questions on component mount
   useEffect(() => {
-    const shuffledQuestions = [...questionsData].sort(() => Math.random() - 0.5).slice(0, 20);
+    const shuffledQuestions = [...questionsData].sort(() => Math.random() - 0.5).slice(0, 40);
     setQuestions(shuffledQuestions);
   }, []);
 
@@ -158,13 +158,13 @@ function GameScreen({ onRiddleCollected, onElimination, riddlesCollected, setIsD
           navigate("/riddles");
           alert("You have collected all the keys. Now you can proceed to the next round.");
           
-          fetch(`${backend_url}/api/player/`)
+          fetch("https://treeversebackend-production.up.railway.app/api/player/")
             .then((response) => response.json())
             .then((players) => {
               const player = players.find((p) => p.name === player_name);
   
               if (player) {
-                fetch(`${backend_url}/api/player/${player.id}/`, {
+                fetch(`https://treeversebackend-production.up.railway.app/api/player/${player.id}/`, {
                   method: "DELETE",
                   headers: { "Content-Type": "application/json" },
                 })
@@ -172,7 +172,7 @@ function GameScreen({ onRiddleCollected, onElimination, riddlesCollected, setIsD
                     if (!res.ok) throw new Error("Failed to delete previous player entry");
                     // console.log("Previous player entry deleted successfully.");
   
-                    return fetch(`${backend_url}/api/player/`, {
+                    return fetch("https://treeversebackend-production.up.railway.app/api/player/", {
                       method: "POST",
                       headers: { "Content-Type": "application/json" },
                       body: JSON.stringify({ name: player_name, is_complete: true, score: newScore }),
@@ -184,7 +184,7 @@ function GameScreen({ onRiddleCollected, onElimination, riddlesCollected, setIsD
                   })
                   .catch((error) => console.error("Error updating player status:", error));
               } else {
-                fetch(`${backend_url}/api/player/`, {
+                fetch("https://treeversebackend-production.up.railway.app/api/player/", {
                   method: "POST",
                   headers: { "Content-Type": "application/json" },
                   body: JSON.stringify({ name: player_name, is_complete: true, score: newScore }),
@@ -200,7 +200,7 @@ function GameScreen({ onRiddleCollected, onElimination, riddlesCollected, setIsD
 
             
   
-          fetch(`${backend_url}/api/leaderboard/`, {
+          fetch("https://treeversebackend-production.up.railway.app/api/leaderboard/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ name: player_name, time: Date.now() - startTime }),

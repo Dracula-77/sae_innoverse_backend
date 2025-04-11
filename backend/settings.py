@@ -31,10 +31,10 @@ DEBUG=True
 
 
 # ALLOWED_HOSTS = ['https://treeversebackend-production.up.railway.app', "http://localhost:3000"]
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'treeversebackend-production.up.railway.app', 'innoverse-25.vercel.app', 'treeverse.arhn.in', 'innoverse.arhn.in', 'web-production-9d1b5.up.railway.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'innoverse-25.vercel.app', 'treeverse.arhn.in', 'innoverse.arhn.in','innoverse-backend.up.railway.app']
 
 
-CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000','https://treeversebackend-production.up.railway.app',"http://localhost:3000", "https://treeverse.arhn.in", "https://treeverse.arhn.in", 'https://innoverse.arhn.in', 'https://web-production-9d1b5.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000',"http://localhost:3000", "https://treeverse.arhn.in", 'https://innoverse.arhn.in','https://innoverse-backend.up.railway.app']
 # CSRF_TRUSTED_ORIGINS = [
 #     "https://treeversebackend-production.up.railway.app",
 #     "http://localhost:3000",  # For local frontend
@@ -68,7 +68,7 @@ MIDDLEWARE = [
 
 ]
 
-CORS_ALLOWED_ORIGINS = [ 'http://127.0.0.1:8000','https://treeversebackend-production.up.railway.app',"http://localhost:3000", 'https://treeverse.arhn.in', 'https://innoverse-25.vercel.app', 'https://innoverse.arhn.in', 'https://web-production-9d1b5.up.railway.app']
+CORS_ALLOWED_ORIGINS = [ 'http://127.0.0.1:8000',"http://localhost:3000", 'https://treeverse.arhn.in', 'https://innoverse-25.vercel.app', 'https://innoverse.arhn.in', 'https://innoverse-backend.up.railway.app']
 # CORS_ALLOWED_ORIGINS = [
 #     "https://treeversebackend-production.up.railway.app",
 #     "http://localhost:3000",  # Adjust as needed
